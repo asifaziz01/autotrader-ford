@@ -231,3 +231,19 @@
     }
   }
 }
+@media (min-width: 1440px) {
+  header {
+    .navbar_top {
+      .navbar_container {
+        max-width: 1440px;
+        margin: 0 auto;
+      }
+    }
+
+    .navbar_bottom {
+      .navbar_bottom_container {
+        width: calc(1440px - 280px);
+      }
+    }
+  }
+}
