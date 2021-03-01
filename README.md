@@ -1,14 +1,14 @@
 <!-- AUTO-GENERATED-CONTENT:START (STARTER) -->
 <div align="center">
 
-[![Gatsby](content/assets/logo.png)](https://at-b.netlify.app/) 
+[![Gatsby](content/assets/logo.png)](https://at-f.netlify.app/) 
 
 # AutoTrader Ford Alpha
 
 ## Deployment
 Alpha
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/b4a17e4e-6cda-4677-93d8-8a8308e83a34/deploy-status)](https://app.netlify.com/sites/at-b/deploys)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/f051505e-d0ec-439f-adc5-0cb55131e604/deploy-status)](https://app.netlify.com/sites/at-f/deploys)
 
 </div>
 
