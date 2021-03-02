@@ -1,0 +1,274 @@
+@media (min-width: 0) {
+  main {
+    max-width: 1920px;
+    margin: 0 auto;
+
+    .slider-container {
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+      padding-top: 50px;
+      // max-width: 1440px;
+      // margin: 0 auto;
+
+      #slider-wrap {
+        height: 100%;
+        position: relative;
+        width: 100%;
+
+        .slider-content {
+          display: flex;
+          flex-direction: column;
+          height: 100%;
+          left: 0;
+          padding-bottom: 40px;
+          padding-left: 20px;
+          padding-top: 35px;
+          padding-right: 20px;
+          position: absolute;
+          top: 0;
+          width: 100%;
+
+          .content-area {
+            display: flex;
+            height: 100%;
+            position: relative;
+
+            #car-data {
+              color: #ffffff;
+              width: 100%;
+
+              .model {
+                font-size: 14px;
+                line-height: 20px;
+                letter-spacing: 0.05em;
+                margin-bottom: 5px;
+              }
+
+              .feature {
+                font-size: 48px;
+                font-weight: 700;
+                line-height: 56px;
+                letter-spacing: 0em;
+                margin-bottom: 5px;
+              }
+
+              .desc {
+                font-size: 14px;
+                line-height: 24px;
+                letter-spacing: 0em;
+                margin-bottom: 20px;
+                max-width: 374px;
+
+                strong {
+                  font-weight: 700;
+                }
+              }
+
+              .cta {
+                display: inline-flex;
+                .cta-btn {
+                  background-color: transparent;
+                  border: 1px solid #ffffff;
+                  border-radius: 100px;
+                  color: #ffffff;
+                  font-size: 10px;
+                  font-weight: 700;
+                  line-height: 12px;
+                  letter-spacing: 0.1em;
+                  padding: 16px 25px;
+                  position: relative;
+
+                  &::after {
+                    content: "";
+                    display: inline-block;
+                    border-top: 8px solid #ffffff;
+                    border-left: 4px solid transparent;
+                    border-right: 4px solid transparent;
+                    border-bottom: 0 solid transparent;
+                    margin-left: 10px;
+                    transform: rotateZ(0deg);
+                    transition: transform 0.2s;
+                  }
+
+                  &:hover {
+                    text-decoration: none;
+                    border-color: #cc0000;
+                    transition: border-color 0.2s;
+                    &::after {
+                      transform: rotateZ(-90deg);
+                    }
+                  }
+                }
+              }
+            }
+
+            .slider-nav-btn {
+              align-items: center;
+              background-color: transparent;
+              border: none;
+              color: #ffffff;
+              display: flex;
+              justify-content: center;
+              padding: 0;
+              position: absolute;
+              bottom: 0;
+              flex-direction: column;
+
+              &.prev {
+                left: 0;
+                &::before {
+                  content: "PREVIOUS";
+                  font-size: 10px;
+                  font-weight: 700;
+                  line-height: 12px;
+                  letter-spacing: 0.1em;
+                  margin-bottom: 10px;
+                }
+              }
+
+              &.next {
+                right: 0;
+                &::before {
+                  content: "NEXT";
+                  font-size: 10px;
+                  font-weight: 700;
+                  line-height: 12px;
+                  letter-spacing: 0.1em;
+                  margin-bottom: 10px;
+                  margin-left: 10px;
+                }
+              }
+
+              .prev-icon,
+              .next-icon {
+                width: 69px;
+                .curve {
+                  stroke: #ffffff;
+                  transition: stroke 0.6s;
+                }
+              }
+
+              &:focus {
+                outline: none;
+              }
+
+              &:active {
+                .prev-icon,
+                .next-icon {
+                  .curve {
+                    stroke: #cc0000;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@media (min-width: 576px) {
+}
+@media (min-width: 768px) {
+  main {
+    .slider-container {
+      padding-top: 59px;
+
+      #slider-wrap {
+        .slider-content {
+          padding-bottom: 80px;
+          padding-left: 50px;
+          padding-top: 69px;
+          padding-right: 50px;
+
+          .content-area {
+            #car-data {
+              .model {
+                font-size: 16px;
+                line-height: 22px;
+                margin-bottom: 10px;
+              }
+
+              .feature {
+                font-size: 80px;
+                line-height: 77px;
+                margin-bottom: 10px;
+              }
+
+              .desc {
+                font-size: 16px;
+                line-height: 26px;
+              }
+
+              .cta {
+                position: absolute;
+                bottom: 0;
+                left: 50%;
+                transform: translateX(-50%);
+
+                .cta-btn {
+                  font-size: 12px;
+                  line-height: 18px;
+                  padding: 16px 35px;
+
+                  &::after {
+                    margin-left: 15px;
+                  }
+                }
+              }
+            }
+
+            .slider-nav-btn {
+              top: 50%;
+              bottom: unset;
+              flex-direction: row;
+
+              &.prev {
+                &::before {
+                  display: none;
+                }
+              }
+
+              .prev-icon {
+                margin-right: 15px;
+              }
+
+              .next-icon {
+                margin-left: 15px;
+              }
+
+              &.next {
+                &::before {
+                  display: none;
+                }
+              }
+              .prev-icon,
+              .next-icon {
+                width: unset;
+                .curve {
+                  transition: stroke 0.3s;
+                }
+              }
+
+              &:hover {
+                .prev-icon,
+                .next-icon {
+                  .curve {
+                    stroke: #cc0000;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@media (min-width: 992px) {
+}
+@media (min-width: 1200px) {
+}
+@media (min-width: 1440px) {
+}

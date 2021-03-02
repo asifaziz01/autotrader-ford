@@ -94,6 +94,11 @@
               align-items: center;
 
               .nav-item {
+                font-size: 14px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 20px;
+                letter-spacing: 0.1em;
                 opacity: 0;
                 &.show {
                   opacity: 1;
@@ -118,13 +123,6 @@
           }
         }
       }
-    }
-  }
-
-  main {
-    .slider-container {
-      height: 100vh;
-      padding-top: 50px;
     }
   }
 }
@@ -165,12 +163,6 @@
           }
         }
       }
-    }
-  }
-
-  main {
-    .slider-container {
-      padding-top: 59px;
     }
   }
 }

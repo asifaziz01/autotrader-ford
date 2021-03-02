@@ -17,7 +17,6 @@ export default class Sketch {
     this.renderer.setSize(this.width, this.height)
     this.renderer.setClearColor(0xeeeeee, 1)
     this.duration = opts.duration || 1
-    this.debug = opts.debug || false
     this.easing = opts.easing || "easeInOut"
 
     this.clicker = document.getElementsByClassName("slider-container")[0]
@@ -48,7 +47,6 @@ export default class Sketch {
       this.settings()
       this.addObjects()
       this.resize()
-      this.clickEvent()
       this.play()
     })
   }
@@ -68,25 +66,10 @@ export default class Sketch {
     })
   }
 
-  clickEvent() {
-    this.clicker.addEventListener("click", () => {
-      this.next()
-    })
-  }
   settings() {
     this.settings = { progress: 0.5 }
-    // if(this.debug) this.gui.add(this.settings, "progress", 0, 1, 0.01);
-
     Object.keys(this.uniforms).forEach(item => {
       this.settings[item] = this.uniforms[item].value
-      if (this.debug)
-        this.gui.add(
-          this.settings,
-          item,
-          this.uniforms[item].min,
-          this.uniforms[item].max,
-          0.01
-        )
     })
   }
 
@@ -173,6 +156,29 @@ export default class Sketch {
     this.render()
   }
 
+  prev() {
+    if (this.isRunning) return
+    this.isRunning = true
+    let len = this.textures.length
+    let prevTexture =
+      this.current === 0
+        ? this.textures[(len - 1) % len]
+        : this.textures[(this.current - 1) % len]
+    this.material.uniforms.texture2.value = prevTexture
+    let tl = new TimelineMax()
+    tl.to(this.material.uniforms.progress, this.duration, {
+      value: 1,
+      ease: Power2[this.easing],
+      onComplete: () => {
+        this.current =
+          this.current === 0 ? (len - 1) % len : (this.current - 1) % len
+        this.material.uniforms.texture1.value = prevTexture
+        this.material.uniforms.progress.value = 0
+        this.isRunning = false
+      },
+    })
+  }
+
   next() {
     if (this.isRunning) return
     this.isRunning = true
@@ -191,6 +197,7 @@ export default class Sketch {
       },
     })
   }
+
   render() {
     if (this.paused) return
     this.time += 0.05
