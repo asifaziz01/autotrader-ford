@@ -120,12 +120,14 @@ export default () => {
             <button
               onClick={e => sliderPrev(activeCarIndex)}
               className="slider-nav-btn prev"
+              aria-label="Slide Previous"
             >
               <PREVIOUS /> <span className="d-none d-md-block">PREVIOUS</span>
             </button>
             <button
               onClick={e => sliderNext(activeCarIndex)}
               className="slider-nav-btn next"
+              aria-label="Slide Next"
             >
               <span className="d-none d-md-block">NEXT</span> <NEXT />
             </button>

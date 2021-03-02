@@ -51,11 +51,13 @@ export default ({ siteTitle }) => {
               */
             }}
             href="//autotrader.ca"
+            aria-label="autotrader"
           >
             <LogoSVG className="d-none d-sm-block" height={62} width={100} />
             <LogoSVG className="d-sm-none" height={50} width={80} />
           </a>
           <a
+            className="navbar_brand_right"
             rel="nofollow"
             href="//www.ford.ca?utm_source=autoTRADER&utm_medium=referral"
             onClick={() => {
@@ -63,7 +65,7 @@ export default ({ siteTitle }) => {
                 TODO: window dataLayer push 
               */
             }}
-            className="navbar_brand_right"
+            aria-label="ford"
           >
             <FordLogoSVG height={40} width={97} />
           </a>
@@ -76,21 +78,24 @@ export default ({ siteTitle }) => {
             expand="xl"
             collapseOnSelect
             onToggle={openNavigation}
+            aria-owns="toggler"
           >
             <Navbar.Toggle
+              id="toggler"
               className="navbar_toggle"
               onClick={() => {
                 /*
                   TODO: window dataLayer push 
                 */
               }}
-              aria-controls="responsive-navbar-nav"
+              aria-controls="auto-ford-nav"
+              aria-selected={false}
             >
               <span className="navbar_toggle_stripes" />
               <span className="navbar_toggle_stripes" />
               <span className="navbar_toggle_stripes" />
             </Navbar.Toggle>
-            <Navbar.Collapse className="navbar_collapse">
+            <Navbar.Collapse id="auto-ford-nav" className="navbar_collapse">
               <Nav>
                 <Nav.Item role="button">BUILT WILD</Nav.Item>
                 <Nav.Item role="button">EXPERT BUILT</Nav.Item>
@@ -98,10 +103,23 @@ export default ({ siteTitle }) => {
                 <Nav.Item role="button">LEGENDARY BUILT</Nav.Item>
               </Nav>
             </Navbar.Collapse>
-            <Button variant={false} active={true} className="switch-lang">
+            <Button
+              variant={false}
+              active={true}
+              className="switch-lang"
+              onClick={e => {
+                // navigate("/en/")
+              }}
+            >
               EN
             </Button>
-            <Button variant={false} className="switch-lang">
+            <Button
+              variant={false}
+              className="switch-lang"
+              onClick={e => {
+                // navigate("/fr/")
+              }}
+            >
               FR
             </Button>
           </Navbar>

@@ -1,6 +1,6 @@
 @media (min-width: 0) {
   header {
-    background: #d7000c;
+    background: #cc0000;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
     position: fixed;
     width: 100%;
@@ -63,6 +63,7 @@
 
             &:focus {
               outline: none;
+              box-shadow: none;
             }
 
             .navbar_toggle_stripes {
@@ -96,7 +97,7 @@
               .nav-item {
                 font-size: 14px;
                 font-style: normal;
-                font-weight: 400;
+                font-weight: 300;
                 line-height: 20px;
                 letter-spacing: 0.1em;
                 opacity: 0;
@@ -209,10 +210,17 @@
             color: #ffffff;
             display: inline-block;
             padding: 0;
+            font-weight: 300;
 
             &:last-child {
               margin-left: 16px;
             }
+
+            &:focus {
+              outline: none;
+              box-shadow: none;
+            }
+
             &.active {
               font-weight: 700;
             }
