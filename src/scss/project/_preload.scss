@@ -1,0 +1,106 @@
+@media (min-width: 0) {
+  @-webkit-keyframes zoomIn {
+    0% {
+      opacity: 0;
+      -webkit-transform: scale3d(0.3, 0.3, 0.3);
+      transform: scale3d(0.3, 0.3, 0.3);
+    }
+
+    50% {
+      opacity: 1;
+    }
+  }
+
+  @keyframes zoomIn {
+    0% {
+      opacity: 0;
+      -webkit-transform: scale3d(0.3, 0.3, 0.3);
+      transform: scale3d(0.3, 0.3, 0.3);
+    }
+
+    50% {
+      opacity: 1;
+    }
+  }
+
+  .preload-wrap {
+    background-color: #081534;
+    display: flex;
+    height: 100vh;
+    position: fixed;
+    width: 100vw;
+    z-index: 999;
+
+    &.playing .preload-container .preload-progress,
+    &.played .preload-container .preload-progress {
+      width: 100%;
+    }
+
+    .preload-container {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      position: relative;
+      width: 100%;
+
+      .preload-icon {
+        display: inline-flex;
+        left: 50%;
+        position: absolute;
+        top: 50%;
+        -webkit-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        max-width: 310.7205505371094px;
+
+        svg {
+          -webkit-animation-name: zoomIn;
+          animation-name: zoomIn;
+        }
+
+        &:not(.play) svg {
+          display: none;
+        }
+
+        &.play svg {
+          -webkit-animation-duration: 1.5s;
+          animation-duration: 1.5s;
+          -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+        }
+      }
+
+      .preload-video {
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+        width: 100%;
+      }
+
+      .preload-progress {
+        border-bottom: 8px solid #cc0000;
+        bottom: 0;
+        left: 0;
+        position: absolute;
+        transition: width 3.99s ease-in-out;
+        width: 0;
+      }
+    }
+  }
+}
+@media (min-width: 576px) {
+}
+@media (min-width: 768px) {
+  .preload-wrap {
+    .preload-container {
+      .preload-icon {
+        max-width: unset;
+      }
+    }
+  }
+}
+@media (min-width: 992px) {
+}
+@media (min-width: 1200px) {
+}
+@media (min-width: 1440px) {
+}

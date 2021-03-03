@@ -1,7 +1,7 @@
-import React from "react"
+import React from 'react'
 
 export default props => {
-    const { className, height, width } = props
+  const { className, height, width } = props
   return (
     <svg
       id="Layer_1"

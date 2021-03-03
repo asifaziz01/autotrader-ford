@@ -1,4 +1,4 @@
-import React from "react"
+import React from 'react'
 
 export default props => {
   const { height, width } = props
@@ -8,7 +8,7 @@ export default props => {
       width={width}
       viewBox="0 0 62 25"
       fill="none"
-      xmlns="http://www.w3.org/2000/svg"
+      xmlns="//www.w3.org/2000/svg"
     >
       <path
         d="M31.2834 1.42661C15.0655 1.42661 2.07056 6.17426 2.07056 12.1203C2.07056 18.0297 15.1779 22.8139 31.2834 22.8139C47.3888 22.8139 60.4962 18.0114 60.4962 12.1203C60.4962 6.22914 47.3888 1.42661 31.2834 1.42661Z"

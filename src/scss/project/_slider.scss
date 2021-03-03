@@ -1,15 +1,63 @@
 @media (min-width: 0) {
+  @-webkit-keyframes fadeInUp {
+    0% {
+      opacity: 0;
+      -webkit-transform: translate3d(0, 100%, 0);
+      transform: translate3d(0, 100%, 0);
+    }
+
+    to {
+      opacity: 1;
+      -webkit-transform: translateZ(0);
+      transform: translateZ(0);
+    }
+  }
+
+  @keyframes fadeInUp {
+    0% {
+      opacity: 0;
+      -webkit-transform: translate3d(0, 100%, 0);
+      transform: translate3d(0, 100%, 0);
+    }
+
+    to {
+      opacity: 1;
+      -webkit-transform: translateZ(0);
+      transform: translateZ(0);
+    }
+  }
+
   main {
     max-width: 1920px;
     margin: 0 auto;
 
+    &.loading {
+      .slider-container {
+        opacity: 0;
+      }
+    }
+
+    &.loaded {
+      .slider-nav-btn {
+        -webkit-animation-name: fadeInUp;
+        animation-name: fadeInUp;
+        -webkit-animation-delay: 0.4s;
+        animation-delay: 0.4s;
+        -webkit-animation-duration: 0.2s;
+        animation-duration: 0.2s;
+        -webkit-animation-fill-mode: both;
+        animation-fill-mode: both;
+      }
+    }
     .slider-container {
       display: flex;
       flex-direction: column;
       height: 100vh;
+      opacity: 1;
       padding-top: 50px;
       // max-width: 1440px;
       // margin: 0 auto;
+      transition: opacity 0.5s;
 
       #slider-wrap {
         height: 100%;
@@ -80,7 +128,7 @@
                   position: relative;
 
                   &::after {
-                    content: "";
+                    content: '';
                     display: inline-block;
                     border-top: 8px solid #ffffff;
                     border-left: 4px solid transparent;
@@ -118,7 +166,7 @@
               &.prev {
                 left: 0;
                 &::before {
-                  content: "PREVIOUS";
+                  content: 'PREVIOUS';
                   font-size: 10px;
                   font-weight: 700;
                   line-height: 12px;
@@ -130,7 +178,7 @@
               &.next {
                 right: 0;
                 &::before {
-                  content: "NEXT";
+                  content: 'NEXT';
                   font-size: 10px;
                   font-weight: 700;
                   line-height: 12px;

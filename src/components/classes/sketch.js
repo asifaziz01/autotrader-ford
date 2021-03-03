@@ -1,5 +1,5 @@
-import * as THREE from "three"
-import { Power2, TimelineMax } from "gsap"
+import * as THREE from 'three'
+import { Power2, TimelineMax } from 'gsap'
 
 export default class Sketch {
   constructor(opts) {
@@ -17,14 +17,14 @@ export default class Sketch {
     this.renderer.setSize(this.width, this.height)
     this.renderer.setClearColor(0xeeeeee, 1)
     this.duration = opts.duration || 1
-    this.easing = opts.easing || "easeInOut"
+    this.easing = opts.easing || 'easeInOut'
 
-    this.clicker = document.getElementsByClassName("slider-container")[0]
+    this.clicker = document.getElementsByClassName('slider-container')[0]
 
-    this.container = document.getElementById("slider")
+    this.container = document.getElementById('slider')
 
-    this.effect = this.container.getAttribute("effect-display")
-    this.images = this.container.getAttribute("images").split(",")
+    this.effect = this.container.getAttribute('effect-display')
+    this.images = this.container.getAttribute('images').split(',')
     this.width = this.container.offsetWidth
     this.height = this.container.offsetHeight
     this.container.appendChild(this.renderer.domElement)
@@ -74,7 +74,7 @@ export default class Sketch {
   }
 
   setupResize() {
-    window.addEventListener("resize", this.resize.bind(this))
+    window.addEventListener('resize', this.resize.bind(this))
   }
 
   resize() {
@@ -114,29 +114,29 @@ export default class Sketch {
   addObjects() {
     this.material = new THREE.ShaderMaterial({
       extensions: {
-        derivatives: "#extension GL_OES_standard_derivatives : enable",
+        derivatives: '#extension GL_OES_standard_derivatives : enable',
       },
       side: THREE.DoubleSide,
       uniforms: {
-        time: { type: "f", value: 0 },
-        progress: { type: "f", value: 0 },
-        border: { type: "f", value: 0 },
-        intensity: { type: "f", value: 0 },
-        scaleX: { type: "f", value: 40 },
-        scaleY: { type: "f", value: 40 },
-        transition: { type: "f", value: 40 },
-        swipe: { type: "f", value: 0 },
-        width: { type: "f", value: 0 },
-        radius: { type: "f", value: 0 },
-        texture1: { type: "f", value: this.textures[0] },
-        texture2: { type: "f", value: this.textures[1] },
+        time: { type: 'f', value: 0 },
+        progress: { type: 'f', value: 0 },
+        border: { type: 'f', value: 0 },
+        intensity: { type: 'f', value: 0 },
+        scaleX: { type: 'f', value: 40 },
+        scaleY: { type: 'f', value: 40 },
+        transition: { type: 'f', value: 40 },
+        swipe: { type: 'f', value: 0 },
+        width: { type: 'f', value: 0 },
+        radius: { type: 'f', value: 0 },
+        texture1: { type: 'f', value: this.textures[0] },
+        texture2: { type: 'f', value: this.textures[1] },
         displacement: {
-          type: "f",
+          type: 'f',
           value: new THREE.TextureLoader().load(this.effect),
         },
-        resolution: { type: "v4", value: new THREE.Vector4() },
+        resolution: { type: 'v4', value: new THREE.Vector4() },
       },
-      // wireframe: true,
+      // wire frame: true,
       vertexShader: this.vertex,
       fragmentShader: this.fragment,
     })

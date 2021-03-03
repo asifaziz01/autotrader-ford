@@ -1,9 +1,9 @@
 {
-  "name": "gatsby-starter-default",
+  "name": "auto-ford",
   "private": true,
-  "description": "A simple starter to get up and developing quickly with Gatsby",
-  "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "description": "autoTRADER Ford Gatsby Project",
+  "version": "1.0.0",
+  "author": "AutoTrader",
   "dependencies": {
     "gatsby": "^2.32.8",
     "gatsby-image": "^2.11.0",
@@ -45,9 +45,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/gatsbyjs/gatsby-starter-default"
+    "url": "https://github.com/4nkit-5hukla/autotrader-ford"
   },
   "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby/issues"
+    "url": "https://github.com/4nkit-5hukla/autotrader-ford/issues"
   }
 }

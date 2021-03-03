@@ -1,46 +1,46 @@
-import React, { useEffect } from "react"
-import { Button, Navbar, Nav } from "react-bootstrap"
+import React, { useEffect } from 'react'
+import { Button, Navbar, Nav } from 'react-bootstrap'
 
-import LogoSVG from "./icons/logo"
-import FordLogoSVG from "./icons/fordLogo"
+import LogoSVG from './icons/logo'
+import FordLogoSVG from './icons/fordLogo'
 
-export default ({ siteTitle }) => {
+export default ({ loading, loaded, siteTitle }) => {
   const openNavigation = () => {
     const navItem = document.querySelectorAll(
-      ".navbar_bottom .navbar .nav-item"
+      '.navbar_bottom .navbar .nav-item'
     )
     navItem.forEach(function (element) {
-      element.classList.remove("show")
+      element.classList.remove('show')
     })
     if (
-      document.querySelector(".navbar_bottom .navbar").classList.toggle("open")
+      document.querySelector('.navbar_bottom .navbar').classList.toggle('open')
     ) {
       setTimeout(() => {
         document
-          .querySelectorAll(".navbar_bottom .navbar .nav-item")
+          .querySelectorAll('.navbar_bottom .navbar .nav-item')
           .forEach(function (element) {
-            element.classList.add("show")
+            element.classList.add('show')
           })
       }, 351)
     } else {
     }
   }
   useEffect(() => {
-    if (typeof window !== "undefined") {
-      window.addEventListener("resize", e => {
+    if (typeof window !== 'undefined') {
+      window.addEventListener('resize', e => {
         if (
           e.target.outerWidth >= 1200 &&
           document
-            .querySelector(".navbar_bottom .navbar")
-            .classList.contains("open")
+            .querySelector('.navbar_bottom .navbar')
+            .classList.contains('open')
         ) {
-          document.querySelector(".navbar .navbar_toggle").click()
+          document.querySelector('.navbar .navbar_toggle').click()
         }
       })
     }
   }, [])
   return (
-    <header>
+    <header className={loading ? 'loading' : loaded ? 'loaded' : ``}>
       <div className="navbar_top">
         <div className="navbar_container">
           <a

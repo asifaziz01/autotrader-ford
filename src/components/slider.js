@@ -1,25 +1,25 @@
-import React, { useEffect, useState } from "react"
-import { navigate } from "gatsby"
-import ReactHtmlParser from "react-html-parser"
-import Sketch from "./classes/sketch"
+import React, { useEffect, useState } from 'react'
+import { navigate } from 'gatsby'
+import ReactHtmlParser from 'react-html-parser'
+import Sketch from './classes/sketch'
 
-import Slides from "./constants/slides"
-import PREVIOUS from "./icons/previous"
-import NEXT from "./icons/next"
+import Slides from './constants/slides'
+import PREVIOUS from './icons/previous'
+import NEXT from './icons/next'
 
 export default () => {
   const { effectSrc, cars, slideImages } = Slides(),
     [sketch, setSketch] = useState(null),
     [activeCarIndex, setActiveCarIndex] = useState(0),
     init = () => {
-      const slider = document.getElementById("slider")
+      const slider = document.getElementById('slider')
       while (slider.firstChild) {
         slider.removeChild(slider.lastChild)
       }
       setSketch(
         new Sketch({
           uniforms: {
-            intensity: { value: 1, type: "f", min: 0, max: 3 },
+            intensity: { value: 1, type: 'f', min: 0, max: 3 },
           },
           fragment: `
           uniform float time;
@@ -59,8 +59,8 @@ export default () => {
       )
     },
     sliderPrev = () => {
-      document.getElementById("car-data").style.transition = "none"
-      document.getElementById("car-data").style.opacity = 0
+      document.getElementById('car-data').style.transition = 'none'
+      document.getElementById('car-data').style.opacity = 0
       if (activeCarIndex === 0) {
         setActiveCarIndex(cars.length - 1)
       } else {
@@ -68,14 +68,14 @@ export default () => {
       }
       sketch.prev()
       setTimeout(() => {
-        document.getElementById("car-data").style.transition =
-          "opacity 1s ease-in"
-        document.getElementById("car-data").style.opacity = 1
+        document.getElementById('car-data').style.transition =
+          'opacity 1s ease-in'
+        document.getElementById('car-data').style.opacity = 1
       }, 600)
     },
     sliderNext = () => {
-      document.getElementById("car-data").style.transition = "none"
-      document.getElementById("car-data").style.opacity = 0
+      document.getElementById('car-data').style.transition = 'none'
+      document.getElementById('car-data').style.opacity = 0
       if (activeCarIndex === cars.length - 1) {
         setActiveCarIndex(0)
       } else {
@@ -83,16 +83,18 @@ export default () => {
       }
       sketch.next()
       setTimeout(() => {
-        document.getElementById("car-data").style.transition =
-          "opacity 1s ease-in"
-        document.getElementById("car-data").style.opacity = 1
+        document.getElementById('car-data').style.transition =
+          'opacity 1s ease-in'
+        document.getElementById('car-data').style.opacity = 1
       }, 600)
     }
   useEffect(() => {
     init()
-    window.addEventListener("resize", e => {
-      init()
-    })
+    if (typeof window !== 'undefined') {
+      window.addEventListener('resize', e => {
+        init()
+      })
+    }
   }, [])
   return (
     <div className="slider-container">
