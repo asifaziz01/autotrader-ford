@@ -15,11 +15,8 @@ const Layout = ({ preload, preloadSrc, children }) => {
         }
         poster: file(relativePath: { eq: "poster.png" }) {
           childImageSharp {
-            fixed(width: 1, height: 1) {
+            fixed(width: 5, height: 5) {
               ...GatsbyImageSharpFixed
-            }
-            fluid(maxWidth: 1, maxHeight: 1) {
-              ...GatsbyImageSharpFluid
             }
           }
         }
