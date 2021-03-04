@@ -30,11 +30,9 @@ const Layout = ({ preload, preloadSrc, children }) => {
     preloadMedia.addEventListener('play', e => {
       setPlaying(true)
     })
-    preloadMedia.addEventListener('canplay', e => {
-      setTimeout(() => {
-        setPlaying(false)
-        setPlayed(true)
-      }, preloadMedia.duration * 1000)
+    preloadMedia.addEventListener('ended', e => {
+      setPlaying(false)
+      setPlayed(true)
     })
   }, [setPlaying, setPlayed])
   return (
