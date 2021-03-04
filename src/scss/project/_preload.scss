@@ -31,9 +31,34 @@
     width: 100vw;
     z-index: 999;
 
-    &.playing .preload-container .preload-progress,
-    &.played .preload-container .preload-progress {
-      width: 100%;
+    &.playing,
+    &.played {
+      .preload-container {
+        .preload-progress {
+          width: 100%;
+        }
+      }
+    }
+
+    &:not(.playing) {
+      .preload-container {
+        .preload-icon {
+          svg {
+            display: none;
+          }
+        }
+      }
+    }
+
+    &.playing,
+    &.played {
+      .preload-container {
+        .preload-icon {
+          svg {
+            display: block;
+          }
+        }
+      }
     }
 
     .preload-container {
@@ -51,14 +76,11 @@
         -webkit-transform: translate(-50%, -50%);
         transform: translate(-50%, -50%);
         max-width: 310.7205505371094px;
+        z-index: 999999;
 
         svg {
           -webkit-animation-name: zoomIn;
           animation-name: zoomIn;
-        }
-
-        &:not(.play) svg {
-          display: none;
         }
 
         &.play svg {
