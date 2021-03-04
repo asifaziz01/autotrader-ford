@@ -13,34 +13,20 @@ const Layout = ({ preload, preloadSrc, children }) => {
             title
           }
         }
-        poster: file(relativePath: { eq: "poster.png" }) {
-          childImageSharp {
-            fixed(width: 5, height: 5) {
-              ...GatsbyImageSharpFixed
-            }
-          }
-        }
       }
     `),
-    posterSrc = data.poster.childImageSharp.fixed.src,
-    [preloadMedia, setPreloadMedia] = useState(null),
-    [isPlaying, setPlaying] = useState(true),
+    [isPlaying, setPlaying] = useState(false),
     [isPlayed, setPlayed] = useState(false)
-  preloadMedia !== null &&
+  useEffect(() => {
+    const preloadMedia = document.getElementById('preload-media')
     preloadMedia.addEventListener('play', e => {
-      setPlayed(false)
       setPlaying(true)
     })
-  preloadMedia !== null &&
     preloadMedia.addEventListener('ended', e => {
       setPlaying(false)
       setPlayed(true)
     })
-
-  useEffect(() => {
-    setPreloadMedia(document.getElementById('preload-media'))
-  }, [])
-  console.log(isPlaying, isPlayed)
+  }, [setPlaying, setPlayed])
   return (
     <>
       {preload && !isPlayed && (
@@ -50,13 +36,16 @@ const Layout = ({ preload, preloadSrc, children }) => {
           }`}
         >
           <div className="preload-container">
-            <div className={`preload-icon ${isPlaying ? 'play' : ``}`}>
+            <div
+              className={`preload-icon ${
+                isPlaying ? 'play' : isPlayed ? 'played' : ``
+              }`}
+            >
               <PreloadIcon />
             </div>
             <video
               className="preload-video"
               id="preload-media"
-              poster={posterSrc}
               autoPlay={true}
               controls={false}
               muted={true}
