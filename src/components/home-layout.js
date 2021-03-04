@@ -20,12 +20,13 @@ const Layout = ({ preload, preloadSrc, children }) => {
 
   useEffect(() => {
     const preloadMedia = document.getElementById('preload-media')
-    typeof window !== 'undefined' &&
+    if (typeof window !== 'undefined') {
       window.addEventListener('beforeunload', event => {
         setPlaying(false)
         setPlayed(false)
         return ''
       })
+    }
     preloadMedia.addEventListener('play', e => {
       setPlaying(true)
     })

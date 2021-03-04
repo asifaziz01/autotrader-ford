@@ -37,10 +37,6 @@
         .preload-progress {
           width: 100%;
         }
-
-        .preload-video {
-          opacity: 1;
-        }
       }
     }
 
@@ -82,7 +78,6 @@
         object-fit: cover;
         object-position: center;
         width: 100%;
-        opacity: 0;
       }
 
       .preload-progress {
