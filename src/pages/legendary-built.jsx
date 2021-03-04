@@ -4,7 +4,7 @@ import Layout from '../components/layout'
 import SEO from '../components/seo'
 import FordMustang from '../components/constants/ford-mustang'
 
-import Hero from './sections/legendary-built/hero'
+import Hero from '../components/sections/legendary-built/hero'
 
 export default () => {
   const pageData = FordMustang(),
