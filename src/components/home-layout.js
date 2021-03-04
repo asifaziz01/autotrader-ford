@@ -20,6 +20,7 @@ const Layout = ({ preload, preloadSrc, children }) => {
   useEffect(() => {
     const preloadMedia = document.getElementById('preload-media')
     preloadMedia.addEventListener('playing', e => {
+      setPlayed(false)
       setPlaying(true)
     })
     preloadMedia.addEventListener('ended', e => {
@@ -27,6 +28,7 @@ const Layout = ({ preload, preloadSrc, children }) => {
       setPlayed(true)
     })
   }, [])
+  console.log(isPlaying, isPlayed)
   return (
     <>
       {preload && !isPlayed && (
