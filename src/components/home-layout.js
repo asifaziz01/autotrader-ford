@@ -15,17 +15,29 @@ const Layout = ({ preload, preloadSrc, children }) => {
         }
       }
     `),
+    [preloadMedia, setPreloadMedia] = useState(null),
     [isPlaying, setPlaying] = useState(false),
     [isPlayed, setPlayed] = useState(false)
-  useEffect(() => {
-    const preloadMedia = document.getElementById('preload-media')
+
+  typeof window !== 'undefined' &&
+    window.addEventListener('beforeunload', event => {
+      setPlaying(false)
+      setPlayed(false)
+      return ''
+    })
+  preloadMedia !== null &&
     preloadMedia.addEventListener('play', e => {
       setPlaying(true)
     })
-    preloadMedia.addEventListener('ended', e => {
-      setPlaying(false)
-      setPlayed(true)
+  preloadMedia !== null &&
+    preloadMedia.addEventListener('canplay', e => {
+      setTimeout(() => {
+        setPlaying(false)
+        setPlayed(true)
+      }, preloadMedia.duration * 1000)
     })
+  useEffect(() => {
+    setPreloadMedia(document.getElementById('preload-media'))
   }, [setPlaying, setPlayed])
   return (
     <>

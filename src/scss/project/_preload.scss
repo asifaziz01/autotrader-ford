@@ -31,9 +31,17 @@
     width: 100vw;
     z-index: 999;
 
-    &.playing .preload-container .preload-progress,
-    &.played .preload-container .preload-progress {
-      width: 100%;
+    &.playing,
+    &.played {
+      .preload-container {
+        .preload-progress {
+          width: 100%;
+        }
+
+        .preload-video {
+          opacity: 1;
+        }
+      }
     }
 
     .preload-container {
@@ -74,6 +82,7 @@
         object-fit: cover;
         object-position: center;
         width: 100%;
+        opacity: 0;
       }
 
       .preload-progress {
