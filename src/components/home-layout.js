@@ -13,8 +13,19 @@ const Layout = ({ preload, preloadSrc, children }) => {
             title
           }
         }
+        poster: file(relativePath: { eq: "poster.png" }) {
+          childImageSharp {
+            fixed(width: 1, height: 1) {
+              ...GatsbyImageSharpFixed
+            }
+            fluid(maxWidth: 1, maxHeight: 1) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
       }
     `),
+    posterSrc = data.poster.childImageSharp.fixed.src,
     [isPlaying, setPlaying] = useState(false),
     [isPlayed, setPlayed] = useState(false)
   useEffect(() => {
@@ -48,6 +59,7 @@ const Layout = ({ preload, preloadSrc, children }) => {
             <video
               className="preload-video"
               id="preload-media"
+              poster={posterSrc}
               autoPlay={true}
               controls={false}
               muted={true}
