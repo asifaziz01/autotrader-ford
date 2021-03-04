@@ -24,7 +24,7 @@ const Layout = ({ preload, preloadSrc, children }) => {
     `),
     posterSrc = data.poster.childImageSharp.fixed.src,
     [preloadMedia, setPreloadMedia] = useState(null),
-    [isPlaying, setPlaying] = useState(false),
+    [isPlaying, setPlaying] = useState(true),
     [isPlayed, setPlayed] = useState(false)
   preloadMedia !== null &&
     preloadMedia.addEventListener('play', e => {
