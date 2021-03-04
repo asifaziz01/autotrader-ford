@@ -1,0 +1,355 @@
+@media (min-width: 0) {
+  .hero {
+    position: relative;
+    color: #ffffff;
+    max-width: 1440px;
+    margin: 0 auto;
+
+    .hero-wrapper {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      left: 0;
+      padding-top: 50px;
+      position: absolute;
+      top: 0;
+      width: 100%;
+      z-index: 1;
+
+      .hero-content {
+        display: flex;
+        height: 100%;
+        position: relative;
+
+        .breadcrumb-area {
+          padding-top: 30px;
+
+          .breadcrumb-back {
+            align-items: center;
+            background-color: #0f68c9;
+            border-radius: 5px;
+            display: inline-flex;
+            height: 30px;
+            justify-content: center;
+            margin-right: 20px;
+            width: 30px;
+          }
+
+          .breadcrumb-parent {
+            font-size: 12px;
+            font-weight: 700;
+            line-height: 17px;
+            letter-spacing: 0.1em;
+            color: #ffffff;
+
+            &:hover {
+              text-decoration: none;
+            }
+
+            &:focus {
+              outline: none;
+              box-shadow: none;
+            }
+          }
+
+          .breadcrumb-trail {
+            font-size: 12px;
+            font-weight: 300;
+            line-height: 17px;
+            letter-spacing: 0.1em;
+
+            &::before {
+              content: ' / ';
+            }
+          }
+
+          .breadcrumb-button {
+            background-color: #ffffff;
+            border-radius: 100px;
+            color: #000000;
+            display: inline-flex;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            line-height: 18px;
+            padding: 11px 35px 11px;
+
+            &:hover {
+              text-decoration: none;
+            }
+          }
+        }
+
+        .content-area {
+          padding-top: 29px;
+
+          .headings {
+            position: relative;
+
+            h5 {
+              font-size: 12px;
+              font-weight: 700;
+              line-height: 17px;
+              letter-spacing: 0.1em;
+            }
+
+            h1 {
+              font-size: 48px;
+              font-weight: 700;
+              line-height: 56px;
+              letter-spacing: 0em;
+              margin-bottom: 0;
+
+              &::after {
+                background-color: #cc0000;
+                bottom: -6px;
+                content: '';
+                display: inline-block;
+                height: 3px;
+                left: 0px;
+                position: absolute;
+                width: 68px;
+              }
+            }
+          }
+        }
+
+        .review-area {
+          padding-top: 230px;
+
+          .review-block {
+            background-color: #ffffff;
+            border-radius: 10px;
+            padding: 50px 30px;
+            position: relative;
+
+            .review-avatar {
+              background-color: #f1f1f1;
+              border-radius: 50%;
+              display: inline-block;
+              height: 74px;
+              overflow: hidden;
+              position: absolute;
+              width: 74px;
+              filter: drop-shadow(
+                0.770833px 2.3125px 11.5625px rgba(0, 0, 0, 0.15)
+              );
+              top: -33px;
+              left: 0;
+
+              .avatar-img {
+                margin-top: 4px;
+              }
+            }
+
+            .review-content {
+              color: #000000;
+              font-family: Roboto;
+              font-size: 14px;
+              line-height: 22px;
+
+              p {
+                margin-bottom: 0;
+              }
+
+              .author-name {
+                font-size: 24px;
+                font-weight: 700;
+                line-height: 36px;
+                margin-bottom: 0;
+              }
+
+              .author-company {
+                font-size: 24px;
+                font-weight: 400;
+                line-height: 36px;
+                margin-bottom: 10px;
+              }
+            }
+          }
+        }
+
+        .scroll-down-btn {
+          display: none;
+        }
+      }
+    }
+  }
+}
+@media (min-width: 321px) {
+  .hero {
+    .hero-wrapper {
+      .hero-content {
+        .review-area {
+          padding-top: 308px;
+        }
+      }
+    }
+  }
+}
+@media (min-width: 576px) {
+  .hero {
+    .bg-image-holder {
+      .gatsby-image-wrapper {
+        max-height: 700px;
+        picture {
+          img {
+            object-position: 50% 75% !important;
+          }
+        }
+      }
+    }
+  }
+}
+@media (min-width: 768px) {
+  .hero {
+    .bg-image-holder {
+      .gatsby-image-wrapper {
+        max-height: unset;
+        picture {
+          img {
+            object-position: 50% 50% !important;
+          }
+        }
+      }
+    }
+    .hero-wrapper {
+      padding-top: 59px;
+      padding-left: 40px;
+      padding-right: 40px;
+
+      .hero-content {
+        .content-area {
+          padding-top: 25px;
+
+          .headings {
+            h5 {
+              font-size: 18px;
+              line-height: 25px;
+              margin-left: 12px;
+            }
+
+            h1 {
+              font-size: 60px;
+              line-height: 90px;
+
+              &::after {
+                bottom: 10px;
+                width: 100px;
+                left: 10px;
+              }
+            }
+          }
+        }
+
+        .review-area {
+          padding-top: 35px;
+
+          .review-block {
+            padding: 50px 40px 50px 50px;
+
+            .review-content {
+              .author-name {
+                font-size: 36px;
+                line-height: 44px;
+              }
+
+              .author-company {
+                font-size: 36px;
+                line-height: 44px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@media (min-width: 992px) {
+  .hero {
+    .hero-wrapper {
+      .hero-content {
+        .review-area {
+          padding-top: 60px;
+
+          .review-block {
+            max-width: 513px;
+          }
+        }
+
+        .scroll-down-btn {
+          display: inline-block;
+          position: absolute;
+          background-color: transparent;
+          border: none;
+          padding: 0;
+          right: 51px;
+          bottom: 40px;
+          z-index: 9;
+
+          &:focus {
+            outline: none;
+            box-shadow: none;
+          }
+        }
+      }
+    }
+  }
+}
+@media (min-width: 1200px) {
+  .hero {
+    .hero-wrapper {
+      .hero-content {
+        .content-area {
+          padding-top: 30px;
+
+          .headings {
+            h1 {
+              font-size: 90px;
+              line-height: 120px;
+            }
+          }
+        }
+
+        .review-area {
+          padding-top: 100px;
+        }
+      }
+    }
+  }
+}
+@media (min-width: 1360px) {
+  .hero {
+    .hero-wrapper {
+      .hero-content {
+        .breadcrumb-area {
+          padding-top: 49px;
+        }
+
+        .content-area {
+          padding-top: 66px;
+
+          .headings {
+            h1 {
+              font-size: 163px;
+              line-height: 191px;
+
+              &::after {
+                bottom: 10px;
+                width: 155px;
+                height: 6px;
+                left: 10px;
+              }
+            }
+          }
+        }
+
+        .review-area {
+          padding-top: 115px;
+        }
+      }
+    }
+  }
+}
+@media (min-width: 1440px) {
+}

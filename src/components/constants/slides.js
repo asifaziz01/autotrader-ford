@@ -94,7 +94,7 @@ const Slides = () => {
         bigHeading: `BUILT WILD`,
         description: `Explore <strong>Bronco Sport’s Accessories in our<br/>3D configurator</strong> and discover your perfect fit.`,
         ctaLabel: `ACCESSORIZE IT`,
-        ctaLink: ``,
+        ctaLink: `/built-wild/`,
       },
       {
         slideImage: expertBuilt.childImageSharp.fixed.src,
@@ -103,7 +103,7 @@ const Slides = () => {
         bigHeading: `EXPERT BUILT`,
         description: `Check out how this person <strong>equipped his Ford F-150</strong> and how it helped him at work and on his daily life.`,
         ctaLabel: `READ ARTICLE`,
-        ctaLink: ``,
+        ctaLink: `/expert-built/`,
       },
       {
         slideImage: legendaryBuilt.childImageSharp.fixed.src,
@@ -112,7 +112,7 @@ const Slides = () => {
         bigHeading: `LEGENDARY BUILT`,
         description: `Check out <strong>how Steve McQueen would accessorize his Mustang</strong> today and how amazing it would look.`,
         ctaLabel: `DISCOVER MORE`,
-        ctaLink: ``,
+        ctaLink: `/legendary-built/`,
       },
       {
         slideImage: kickItOut.childImageSharp.fixed.src,
@@ -121,7 +121,7 @@ const Slides = () => {
         bigHeading: `KIT IT OUT`,
         description: `Explore <strong>Escape’s Accessories</strong> in and how this nice person prepared his vehicle to make it great.`,
         ctaLabel: `READ ARTICLE`,
-        ctaLink: ``,
+        ctaLink: `/kit-it-out/`,
       },
     ],
     data = {

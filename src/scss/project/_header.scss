@@ -110,6 +110,13 @@
                 line-height: 20px;
                 letter-spacing: 0.1em;
                 opacity: 0;
+
+                .nav-link {
+                  color: #ffffff;
+                  &.active {
+                    font-weight: 700;
+                  }
+                }
                 &.show {
                   opacity: 1;
                 }

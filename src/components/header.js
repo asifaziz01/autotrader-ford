@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react'
+import { Link } from 'gatsby'
 import { Button, Navbar, Nav } from 'react-bootstrap'
 
 import LogoSVG from './icons/logo'
@@ -96,12 +97,58 @@ export default ({ loading, loaded, siteTitle }) => {
               <span className="navbar_toggle_stripes" />
             </Navbar.Toggle>
             <Navbar.Collapse id="auto-ford-nav" className="navbar_collapse">
-              <Nav>
-                <Nav.Item role="button">BUILT WILD</Nav.Item>
-                <Nav.Item role="button">EXPERT BUILT</Nav.Item>
-                <Nav.Item role="button">KIT IT OUT</Nav.Item>
-                <Nav.Item role="button">LEGENDARY BUILT</Nav.Item>
-              </Nav>
+              {typeof window !== 'undefined' && (
+                <Nav>
+                  <Nav.Item>
+                    <Link
+                      className={`nav-link ${
+                        window.location.pathname === '/built-wild/'
+                          ? `active`
+                          : ``
+                      }`}
+                      to="/built-wild/"
+                    >
+                      BUILT WILD
+                    </Link>
+                  </Nav.Item>
+                  <Nav.Item>
+                    <Link
+                      className={`nav-link ${
+                        window.location.pathname === '/expert-built/'
+                          ? `active`
+                          : ``
+                      }`}
+                      to="/expert-built/"
+                    >
+                      EXPERT BUILT
+                    </Link>
+                  </Nav.Item>
+                  <Nav.Item>
+                    <Link
+                      className={`nav-link ${
+                        window.location.pathname === '/kit-it-out/'
+                          ? `active`
+                          : ``
+                      }`}
+                      to="/kit-it-out/"
+                    >
+                      KIT IT OUT
+                    </Link>
+                  </Nav.Item>
+                  <Nav.Item>
+                    <Link
+                      className={`nav-link ${
+                        window.location.pathname === '/legendary-built/'
+                          ? `active`
+                          : ``
+                      }`}
+                      to="/legendary-built/"
+                    >
+                      LEGENDARY BUILT
+                    </Link>
+                  </Nav.Item>
+                </Nav>
+              )}
             </Navbar.Collapse>
             <Button
               variant={false}
