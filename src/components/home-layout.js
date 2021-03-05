@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import PropTypes from 'prop-types'
 import { useStaticQuery, graphql } from 'gatsby'
 
+import useIsMounted from './functions/useIsMounted'
 import Header from './header'
 import PreloadIcon from './icons/preload'
 
@@ -13,13 +14,22 @@ const Layout = ({ preload, preloadSrc, children }) => {
             title
           }
         }
+        poster: file(relativePath: { eq: "poster.png" }) {
+          childImageSharp {
+            fixed(width: 5, height: 5) {
+              ...GatsbyImageSharpFixed
+            }
+          }
+        }
       }
     `),
+    posterSrc = data.poster.childImageSharp.fixed.src,
     [isPlaying, setPlaying] = useState(false),
-    [isPlayed, setPlayed] = useState(false)
+    [isPlayed, setPlayed] = useState(false),
+    isMounted = useIsMounted()
 
   useEffect(() => {
-    const preloadMedia = document.getElementById('preload-media')
+    /*
     if (typeof window !== 'undefined') {
       window.addEventListener('beforeunload', event => {
         setPlaying(false)
@@ -27,14 +37,18 @@ const Layout = ({ preload, preloadSrc, children }) => {
         return ''
       })
     }
-    preloadMedia.addEventListener('play', e => {
-      setPlaying(true)
-    })
-    preloadMedia.addEventListener('ended', e => {
-      setPlaying(false)
-      setPlayed(true)
-    })
-  }, [setPlaying, setPlayed])
+    */
+    const preloadMedia = document.getElementById('preload-media')
+    if (isMounted()) {
+      preloadMedia.addEventListener('play', e => {
+        setPlaying(true)
+      })
+      preloadMedia.addEventListener('ended', e => {
+        setPlaying(false)
+        setPlayed(true)
+      })
+    }
+  }, [isMounted, setPlaying, setPlayed])
   return (
     <>
       {preload && !isPlayed && (
@@ -54,9 +68,10 @@ const Layout = ({ preload, preloadSrc, children }) => {
             <video
               className="preload-video"
               id="preload-media"
-              autoPlay={true}
+              poster={posterSrc}
               controls={false}
               muted={true}
+              autoPlay={true}
             >
               <source src={preloadSrc} type="video/mp4" />
             </video>
