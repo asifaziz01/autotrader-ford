@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import PropTypes from 'prop-types'
 import { useStaticQuery, graphql } from 'gatsby'
+import { useIsMounted, useRefresh } from 'react-tidy'
 
-import useIsMounted from './functions/useIsMounted'
 import Header from './header'
 import PreloadIcon from './icons/preload'
 
@@ -23,23 +23,20 @@ const Layout = ({ preload, preloadSrc, children }) => {
         }
       }
     `),
+    refresh = useRefresh(),
+    isMounted = useIsMounted(),
     posterSrc = data.poster.childImageSharp.fixed.src,
     [isPlaying, setPlaying] = useState(false),
-    [isPlayed, setPlayed] = useState(false),
-    isMounted = useIsMounted()
+    [isPlayed, setPlayed] = useState(false)
 
   useEffect(() => {
-    /*
     if (typeof window !== 'undefined') {
       window.addEventListener('beforeunload', event => {
-        setPlaying(false)
-        setPlayed(false)
-        return ''
+        return refresh()
       })
     }
-    */
     const preloadMedia = document.getElementById('preload-media')
-    if (isMounted()) {
+    if (preloadMedia !== null && isMounted()) {
       preloadMedia.addEventListener('play', e => {
         setPlaying(true)
       })
@@ -48,7 +45,7 @@ const Layout = ({ preload, preloadSrc, children }) => {
         setPlayed(true)
       })
     }
-  }, [isMounted, setPlaying, setPlayed])
+  }, [refresh, isMounted, setPlaying, setPlayed])
   return (
     <>
       {preload && !isPlayed && (

@@ -78,7 +78,6 @@
       .content-upper {
         font-size: 14px;
         line-height: 22px;
-        max-width: 513px;
 
         p {
           margin-bottom: 4px;
@@ -88,12 +87,16 @@
       .img-section-2 {
         margin-top: 30px;
         margin-bottom: 50px;
+
+        &.lower {
+          margin-top: 50px;
+          margin-bottom: 0;
+        }
       }
 
       .heading-lower {
         margin-left: auto;
         margin-right: auto;
-        max-width: 404px;
 
         h6 {
           font-size: 24px;
@@ -104,7 +107,6 @@
       .content-lower {
         font-size: 18px;
         line-height: 30px;
-        max-width: 510px;
       }
     }
   }
@@ -116,6 +118,18 @@
     .section-area {
       .heading-upper {
         max-width: 336px;
+      }
+
+      .content-upper {
+        max-width: 513px;
+      }
+
+      .heading-lower {
+        max-width: 404px;
+      }
+
+      .content-lower {
+        max-width: 510px;
       }
     }
   }

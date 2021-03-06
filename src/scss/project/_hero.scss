@@ -3,8 +3,18 @@
     position: relative;
     background-color: #f1f5ff;
     color: #ffffff;
+    max-width: 1920px;
+    margin: 0 auto;
+    &::after {
+      content: '';
+      height: 100%;
+      left: 0;
+      position: absolute;
+      top: 0;
+      width: 100%;
+      z-index: 0;
+    }
 
-    .bg-image-holder,
     .hero-wrapper {
       max-width: 1440px;
       margin: 0 auto;
@@ -264,7 +274,7 @@
         min-height: 426px;
         picture {
           img {
-            object-position: 50% 50% !important;
+            object-position: 50% 0 !important;
           }
         }
       }
