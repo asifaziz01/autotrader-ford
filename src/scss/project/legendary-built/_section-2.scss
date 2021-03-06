@@ -56,8 +56,6 @@
 }
 @media (min-width: 768px) {
   .section-2 {
-    background: #f1f5ff;
-    background: linear-gradient(0deg, #ffffff 60%, #f1f5ff 60%);
     padding-bottom: 50px;
 
     .section-area {
@@ -113,6 +111,8 @@
 }
 @media (min-width: 992px) {
   .section-2 {
+    background: #f1f5ff;
+    background: linear-gradient(0deg, #ffffff 70%, #f1f5ff 70%);
     padding-top: 124px;
 
     .section-area {
