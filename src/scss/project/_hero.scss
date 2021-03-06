@@ -1,21 +1,31 @@
 @media (min-width: 0) {
-  :root {
-    background-color: #f1f5ff;
-  }
   .hero {
     position: relative;
+    background-color: #f1f5ff;
     color: #ffffff;
-    max-width: 1440px;
-    margin: 0 auto;
+
+    .bg-image-holder,
+    .hero-wrapper {
+      max-width: 1440px;
+      margin: 0 auto;
+    }
+
+    .bg-image-holder {
+      .gatsby-image-wrapper {
+        max-height: 667px;
+        min-height: 667px;
+      }
+    }
 
     .hero-wrapper {
       display: flex;
       flex-direction: column;
       height: 100%;
-      left: 0;
+      left: 50%;
       padding-top: 50px;
       position: absolute;
       top: 0;
+      transform: translateX(-50%);
       width: 100%;
       z-index: 1;
 
@@ -76,6 +86,10 @@
             letter-spacing: 0.1em;
             line-height: 18px;
             padding: 11px 35px 11px;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            max-width: 152px;
 
             &:hover {
               text-decoration: none;
@@ -118,7 +132,7 @@
         }
 
         .review-area {
-          padding-top: 230px;
+          padding-top: 308px;
 
           .review-block {
             background-color: #ffffff;
@@ -141,7 +155,9 @@
               left: 0;
 
               .avatar-img {
-                margin-top: 4px;
+                &:not(.no-margin) {
+                  margin-top: 4px;
+                }
               }
             }
 
@@ -150,6 +166,9 @@
               font-family: Roboto;
               font-size: 14px;
               line-height: 22px;
+              max-height: 258px;
+              min-height: 258px;
+              overflow: auto;
 
               p {
                 margin-bottom: 0;
@@ -184,7 +203,20 @@
     .hero-wrapper {
       .hero-content {
         .review-area {
-          padding-top: 308px;
+          &.sm-pt-300 {
+            padding-top: 300px;
+          }
+        }
+      }
+    }
+  }
+}
+@media (min-width: 326px) {
+  .hero {
+    .bg-image-holder {
+      .gatsby-image-wrapper {
+        &.mh-700 {
+          max-height: 700px;
         }
       }
     }
@@ -194,10 +226,27 @@
   .hero {
     .bg-image-holder {
       .gatsby-image-wrapper {
-        max-height: 700px;
         picture {
           img {
             object-position: 50% 75% !important;
+          }
+        }
+      }
+    }
+
+    .hero-wrapper {
+      .hero-content {
+        .breadcrumb-area {
+          &.add-pb {
+            padding-bottom: 40px;
+          }
+        }
+
+        .review-area {
+          .review-block {
+            .review-content {
+              min-height: 192px;
+            }
           }
         }
       }
@@ -208,7 +257,11 @@
   .hero {
     .bg-image-holder {
       .gatsby-image-wrapper {
-        max-height: unset;
+        &.mh-700 {
+          max-height: unset;
+        }
+        max-height: 426px;
+        min-height: 426px;
         picture {
           img {
             object-position: 50% 50% !important;
@@ -248,6 +301,10 @@
         .review-area {
           padding-top: 35px;
 
+          &.sm-pt-300 {
+            padding-top: 35px;
+          }
+
           .review-block {
             padding: 50px 40px 50px 50px;
 
@@ -270,6 +327,13 @@
 }
 @media (min-width: 992px) {
   .hero {
+    .bg-image-holder {
+      .gatsby-image-wrapper {
+        max-height: 550px;
+        min-height: 550px;
+      }
+    }
+
     .hero-wrapper {
       .hero-content {
         .review-area {
@@ -301,6 +365,13 @@
 }
 @media (min-width: 1200px) {
   .hero {
+    .bg-image-holder {
+      .gatsby-image-wrapper {
+        max-height: 667px;
+        min-height: 667px;
+      }
+    }
+
     .hero-wrapper {
       .hero-content {
         .content-area {
@@ -316,6 +387,10 @@
 
         .review-area {
           padding-top: 100px;
+
+          &.sm-pt-300 {
+            padding-top: 100px;
+          }
         }
       }
     }
@@ -323,6 +398,13 @@
 }
 @media (min-width: 1360px) {
   .hero {
+    .bg-image-holder {
+      .gatsby-image-wrapper {
+        max-height: 799px;
+        min-height: 799px;
+      }
+    }
+
     .hero-wrapper {
       .hero-content {
         .breadcrumb-area {

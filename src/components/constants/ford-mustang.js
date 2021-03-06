@@ -1,7 +1,12 @@
 import { graphql, useStaticQuery } from 'gatsby'
 
 const FordMustang = () => {
-  const { fordMustangMd, fordMustang, neilAvatar } = useStaticQuery(graphql`
+  const {
+      fordMustangMd,
+      fordMustang,
+      neilAvatar,
+      fordSection2,
+    } = useStaticQuery(graphql`
       {
         fordMustangMd: file(relativePath: { eq: "ford-mustang-md.jpg" }) {
           childImageSharp {
@@ -33,6 +38,16 @@ const FordMustang = () => {
             }
           }
         }
+        fordSection2: file(relativePath: { eq: "ford-mustang-s-2.png" }) {
+          childImageSharp {
+            fixed(width: 2518, height: 1200) {
+              ...GatsbyImageSharpFixed
+            }
+            fluid(maxWidth: 2518, maxHeight: 1200) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
       }
     `),
     seo = {
@@ -60,6 +75,13 @@ const FordMustang = () => {
           from: `autoTRADER`,
           content: `<p>The all-new F-150 is purpose-built from the ground up — redesigned to be the toughest, <strong>most productive F-150 ever.</strong> This is what happens when you accesorize it with accessories like the tonneau, the bed cover or the step bars. Learn how this contractors choose their accessories according to <strong>what matters most to them.</strong></p>`,
         },
+      },
+      section2: {
+        headingUpper: `Lorem Ipsum Doloris Header Copy`,
+        contentUpper: `<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, seddo eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>`,
+        image: fordSection2,
+        headingLower: `“Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. ”`,
+        contentLower: `Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?`,
       },
     },
     data = {
