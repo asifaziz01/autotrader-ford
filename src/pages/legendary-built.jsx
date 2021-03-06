@@ -8,7 +8,7 @@ import Hero from '../components/sections/legendary-built/hero'
 import Section2 from '../components/sections/legendary-built/section-2'
 import Section3 from '../components/sections/legendary-built/section-3'
 
-export default () => {
+const LegendaryBuilt = () => {
   const pageData = FordMustang(),
     { seo, sections } = pageData
 
@@ -21,3 +21,4 @@ export default () => {
     </Layout>
   )
 }
+export default LegendaryBuilt

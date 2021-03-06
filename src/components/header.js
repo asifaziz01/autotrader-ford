@@ -1,3 +1,4 @@
+/* eslint import/no-anonymous-default-export: [2, {"allowArrowFunction": true}] */
 import React, { useEffect } from 'react'
 import { Link } from 'gatsby'
 import { Button, Navbar, Nav } from 'react-bootstrap'

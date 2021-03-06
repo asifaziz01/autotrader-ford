@@ -1,6 +1,7 @@
+/* eslint import/no-anonymous-default-export: [2, {"allowArrowFunction": true}] */
 import React, { useEffect, useState } from 'react'
 import { navigate } from 'gatsby'
-import ReactHtmlParser from 'react-html-parser'
+import ReactHtmlParser from 'html-react-parser'
 import Sketch from './classes/sketch'
 
 import Slides from './constants/slides'

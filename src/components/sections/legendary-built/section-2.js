@@ -1,5 +1,6 @@
+/* eslint import/no-anonymous-default-export: [2, {"allowArrowFunction": true}] */
 import React from 'react'
-import ReactHtmlParser from 'react-html-parser'
+import ReactHtmlParser from 'html-react-parser'
 import Img from 'gatsby-image/withIEPolyfill'
 
 export default ({ data }) => {

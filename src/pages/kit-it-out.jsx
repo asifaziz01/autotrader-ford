@@ -3,7 +3,7 @@ import React from 'react'
 import Layout from '../components/layout'
 import SEO from '../components/seo'
 
-export default () => {
+const KitItOut = () => {
   return (
     <Layout>
       <SEO title="Kit It Out" />
@@ -13,3 +13,4 @@ export default () => {
     </Layout>
   )
 }
+export default KitItOut

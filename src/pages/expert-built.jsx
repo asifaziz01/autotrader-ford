@@ -6,7 +6,7 @@ import F150 from '../components/constants/f-150'
 
 import Hero from '../components/sections/expert-built/hero'
 
-export default () => {
+const ExpertBuilt = () => {
   const pageData = F150(),
     { seo, sections } = pageData
   return (
@@ -16,3 +16,5 @@ export default () => {
     </Layout>
   )
 }
+
+export default ExpertBuilt
