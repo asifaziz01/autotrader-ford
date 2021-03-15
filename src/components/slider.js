@@ -8,6 +8,8 @@ import Slides from './constants/slides'
 import PREVIOUS from './icons/previous'
 import NEXT from './icons/next'
 
+import * as sliderStyle from "./slider.module.css"
+
 export default () => {
   const { effectSrc, cars, slideImages } = Slides(),
     [sketch, setSketch] = useState(null),

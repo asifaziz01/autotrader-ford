@@ -3,7 +3,7 @@ import React from 'react'
 
 export default () => {
   return (
-    <svg
+   <svg
       width="85"
       height="72"
       viewBox="0 0 85 72"

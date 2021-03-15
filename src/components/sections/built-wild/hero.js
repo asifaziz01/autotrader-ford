@@ -10,13 +10,14 @@ import ScrollDown from '../../../components/icons/scroll-down'
 export default ({ data }) => {
   const { images, breadcrumb, contentArea, reviewArea } = data,
     { mobileOrPhablet, tabletOrDesktop } = images
+
   return (
     <section className="hero">
       <div className="bg-image-holder">
         <Img
           fluid={mobileOrPhablet.childImageSharp.fluid}
           alt="Hero-mobile"
-          className="d-md-none"
+          className="d-md-none mh-700"
         />
         <Img
           fluid={tabletOrDesktop.childImageSharp.fluid}
@@ -27,8 +28,8 @@ export default ({ data }) => {
       <div className="hero-wrapper">
         <div className="hero-content">
           <div className="container-fluid">
-            <div className="breadcrumb-area">
-              <div className="d-flex">
+            <div className="breadcrumb-area add-pb">
+              <div className="d-flex d-sm-none">
                 <div className="flex-grow-1 my-auto">
                   <div className="d-flex">
                     <div className="flex-shrink-1 my-auto">
@@ -66,13 +67,13 @@ export default ({ data }) => {
                 <h1>{contentArea.bigTitle}</h1>
               </div>
             </div>
-            <div className="review-area">
+            <div className="review-area sm-pt-300">
               <div className="review-block">
                 <div className="review-avatar">
                   <Img
                     fluid={reviewArea.avatar.childImageSharp.fluid}
                     alt="Avatar"
-                    className="avatar-img"
+                    className="avatar-img no-margin"
                   />
                 </div>
                 <div className="review-content">
